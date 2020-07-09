@@ -20,6 +20,14 @@ class Recipe extends React.Component {
             ))}
           </ul>
         </div>
+        <div className='body'>
+          {this.props.recipe.body.map((value, index) => (
+            <div>
+              <h3>{value.title}</h3>
+              <p>{value.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

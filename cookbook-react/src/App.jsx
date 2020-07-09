@@ -17,26 +17,39 @@ function App() {
               body: [
                 new BodySegmentSchema({
                   title: 'Stuff',
-                  description: 'at this point, do stuff',
+                  body: 'at this point, do stuff',
                 }),
                 new BodySegmentSchema({
                   title: 'more',
-                  description: 'domoreplease',
+                  body: 'domoreplease',
                 }),
               ],
             }),
             new RecipeSchema({
               title: 'test',
-              description: 'test test',
+              description:
+                'test testest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testt',
               ingredients: ['1 Shaggot', '2 noddles'],
               body: [
                 new BodySegmentSchema({
                   title: 'Stuff',
-                  description: 'at this point, do stuff',
+                  body: 'at this point, do stuff',
                 }),
                 new BodySegmentSchema({
                   title: 'more',
-                  description: 'domoreplease',
+                  body: 'domoreplease',
+                }),
+                new BodySegmentSchema({
+                  title: 'more',
+                  body: 'domoreplease',
+                }),
+                new BodySegmentSchema({
+                  title: 'more',
+                  body: 'domoreplease',
+                }),
+                new BodySegmentSchema({
+                  title: 'more',
+                  body: 'domoreplease',
                 }),
               ],
             }),
