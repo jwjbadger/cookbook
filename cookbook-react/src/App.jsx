@@ -14,6 +14,7 @@ function App() {
               title: 'Hey',
               description: 'Hey Hey Hey Hey',
               ingredients: ['hay', 'hay', 'hay', 'hay'],
+              servings: 4,
               body: [
                 new BodySegmentSchema({
                   title: 'Stuff',
@@ -27,9 +28,9 @@ function App() {
             }),
             new RecipeSchema({
               title: 'test',
-              description:
-                'test testest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testt',
+              description: 'test testest',
               ingredients: ['1 Shaggot', '2 noddles'],
+              servings: 2,
               body: [
                 new BodySegmentSchema({
                   title: 'Stuff',

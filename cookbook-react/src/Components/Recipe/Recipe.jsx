@@ -11,6 +11,8 @@ class Recipe extends React.Component {
           </h3>
           <p>
             <i>{this.props.recipe.description}</i>
+            <br />
+            <i>Serves {this.props.recipe.servings}</i>
           </p>
         </div>
         <div className='Ingredients'>
