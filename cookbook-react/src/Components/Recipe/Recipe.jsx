@@ -5,12 +5,21 @@ class Recipe extends React.Component {
   render() {
     return (
       <div className='Recipe'>
-        <h3>
-          <b>{this.props.recipe.title}</b>
-        </h3>
-        <p>
-          <i>{this.props.recipe.description}</i>
-        </p>
+        <div className='Header'>
+          <h3>
+            <b>{this.props.recipe.title}</b>
+          </h3>
+          <p>
+            <i>{this.props.recipe.description}</i>
+          </p>
+        </div>
+        <div className='Ingredients'>
+          <ul>
+            {this.props.recipe.ingredients.map((value, index) => (
+              <li>{value}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
