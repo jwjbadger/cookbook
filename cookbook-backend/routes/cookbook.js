@@ -30,6 +30,7 @@ router.post('/', async (req, res) => {
   }
 
   const recipe = new Recipe({
+    author: req.body.author,
     title: req.body.title,
     description: req.body.description,
     ingredients: req.body.ingredients,
@@ -63,6 +64,7 @@ router.put('/:_id', async (req, res) => {
 
     const recipe = new Recipe({
       _id: req.params._id,
+      author: req.body.author,
       title: req.body.title,
       description: req.body.description,
       ingredients: req.body.ingredients,
