@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
 
-const BodySegment = require('./BodySegment');
-
 const RecipeSchema = mongoose.Schema({
   title: String,
   description: String,
   ingredients: [String],
   servings: Number,
-  body: [BodySegment],
+  body: [{ title: String, body: String }],
 });
 
 RecipeSchema.set('collection', 'recipes');

@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-
-const BodySegment = mongoose.Schema({
-  title: String,
-  body: String,
-});
+class BodySegment {
+  constructor(title, body) {
+    this.title = title;
+    this.body = body;
+  }
+}
 
 module.exports = BodySegment;
