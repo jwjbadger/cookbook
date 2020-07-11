@@ -12,6 +12,8 @@ class Recipe extends React.Component {
           <p>
             <i>{this.props.recipe.description}</i>
             <br />
+            <i>By {this.props.recipe.author}</i>
+            <br />
             <i>Serves {this.props.recipe.servings}</i>
           </p>
         </div>

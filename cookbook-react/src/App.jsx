@@ -13,6 +13,7 @@ function App() {
             new RecipeSchema({
               title: 'Hey',
               description: 'Hey Hey Hey Hey',
+              author: 'No one',
               ingredients: ['hay', 'hay', 'hay', 'hay'],
               servings: 4,
               body: [
@@ -29,6 +30,7 @@ function App() {
             new RecipeSchema({
               title: 'test',
               description: 'test testest',
+              author: 'None',
               ingredients: ['1 Shaggot', '2 noddles'],
               servings: 2,
               body: [
