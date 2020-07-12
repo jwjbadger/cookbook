@@ -7,7 +7,7 @@ class Cookbook extends React.Component {
     return (
       <div className='Cookbook'>
         {this.props.recipes.map((value, index) => (
-          <Recipe recipe={value} />
+          <Recipe recipe={value} key={value.title.toString()} />
         ))}
       </div>
     );

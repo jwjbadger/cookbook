@@ -20,13 +20,13 @@ class Recipe extends React.Component {
         <div className='Ingredients'>
           <ul>
             {this.props.recipe.ingredients.map((value, index) => (
-              <li>{value}</li>
+              <li key={index}>{value}</li>
             ))}
           </ul>
         </div>
         <div className='body'>
           {this.props.recipe.body.map((value, index) => (
-            <div>
+            <div key={index}>
               <h3>{value.title}</h3>
               <p>{value.body}</p>
             </div>
