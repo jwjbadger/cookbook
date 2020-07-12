@@ -10,8 +10,11 @@ import rootReducer from './Store/reducers';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { fetchRecipes } from './Store/actions';
 
 let store = createStore(rootReducer, applyMiddleware(thunk));
+
+store.dispatch(fetchRecipes());
 
 ReactDOM.render(
   <Provider store={store}>

@@ -17,9 +17,9 @@
   margin-left: 4px;
   margin-top: 3px;
   padding-right: 7px;
-  max-height: 20%;
+  max-height: 40%;
   max-width: 100%;
-  overflow: wrap;
+  overflow: hidden;
 }
 
 .Ingredients {
@@ -27,7 +27,7 @@
   padding-left: 5px;
   min-width: 20%;
   max-width: 40%;
-  height: 70%;
+  height: 55%;
   margin-right: 0px;
   float: left;
 }
