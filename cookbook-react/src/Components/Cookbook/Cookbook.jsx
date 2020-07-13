@@ -10,6 +10,33 @@ class Cookbook extends React.Component {
         {this.props.cookbook.map((value, index) => (
           <Recipe recipe={value} key={value.title.toString()} />
         ))}
+
+        <div className='Recipe'>
+          <div className='Header'>
+            <h3>
+              <b>
+                <input placeholder='Recipe Title'></input>
+              </b>
+            </h3>
+            <p>
+              <i>
+                <input placeholder='Recipe description'></input>
+              </i>
+              <br />
+              <i>
+                By <input placeholder='Author'></input>
+              </i>
+              <br />
+              <i>
+                Serves <input placeholder='0'></input>
+              </i>
+            </p>
+          </div>
+          <div className='Ingredients'>
+            <ul>{/* list */}</ul>
+          </div>
+          <div className='body'>{/* list */}</div>
+        </div>
       </div>
     );
   }

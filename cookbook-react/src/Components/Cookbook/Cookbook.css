@@ -2,3 +2,10 @@
   display: flex;
   flex-wrap: wrap;
 }
+input {
+  color: #406d96;
+  background-color: #c9e2e8;
+  border-width: 0px;
+  border-radius: 1rem;
+  padding-left: 4px;
+}
