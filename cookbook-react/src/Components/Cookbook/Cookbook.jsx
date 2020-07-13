@@ -1,17 +1,17 @@
 import React from 'react';
 import Recipe from '../Recipe/Recipe';
+import RecipeSchema from '../../Models/Recipe';
+import BodySegmentSchema from '../../Models/BodySegment';
 import { connect } from 'react-redux';
 import './Cookbook.css';
+import { postRecipe } from '../../Store/actions';
 
 class Cookbook extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ingredients: ['test', 'hey'],
-      body: [
-        { title: 'test', body: 'hey hey hey' },
-        { title: 'double test', body: 'hey hey hey' },
-      ],
+      ingredients: [],
+      body: [],
     };
     this.addToIngredients = this.addToIngredients.bind(this);
   }
@@ -106,6 +106,28 @@ class Cookbook extends React.Component {
                 </button>
               </li>
             </ul>
+            <button
+              onClick={() =>
+                this.props.submit(
+                  new RecipeSchema({
+                    title: this.refs.title?.value,
+                    description: this.refs.description?.value,
+                    author: this.refs.author?.value,
+                    ingredients: this.state.ingredients,
+                    servings: this.refs.servings?.value,
+                    body: this.state.body.map(
+                      (value) =>
+                        new BodySegmentSchema({
+                          title: value.title,
+                          body: value.body,
+                        }),
+                    ),
+                  }),
+                )
+              }
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>
@@ -117,10 +139,10 @@ const mapStateToProps = (state) => ({
   cookbook: state.recipes,
 });
 
-// Does nothing right now, but may be needed in future
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submit: (recipe) => dispatch(postRecipe(recipe)),
+  };
+};
 
-export default connect(mapStateToProps /* mapDispatchToProps */)(Cookbook);
+export default connect(mapStateToProps, mapDispatchToProps)(Cookbook);
