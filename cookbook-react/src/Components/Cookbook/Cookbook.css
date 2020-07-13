@@ -2,10 +2,21 @@
   display: flex;
   flex-wrap: wrap;
 }
+#newIngredient {
+  max-width: 98%;
+}
 input {
   color: #406d96;
   background-color: #c9e2e8;
+
   border-width: 0px;
   border-radius: 1rem;
   padding-left: 4px;
+}
+button {
+  background-color: #406d96;
+  color: #c9e2e8;
+
+  border-width: 0px;
+  border-radius: 1rem;
 }

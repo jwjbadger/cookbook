@@ -65,7 +65,11 @@ class Cookbook extends React.Component {
                 <li key={index}>{value}</li>
               ))}
               <li>
-                <input placeholder='New Ingredient' ref='newIngredient' />
+                <input
+                  placeholder='New Ingredient'
+                  ref='newIngredient'
+                  id='newIngredient'
+                />
               </li>
               <button
                 onMouseUp={() =>
@@ -85,12 +89,9 @@ class Cookbook extends React.Component {
                 </li>
               ))}
               <li>
-                <h3>
-                  <input placeholder='Title' ref='newTitle' />
-                </h3>
-                <p>
-                  <input placeholder='Body' ref='newBody' />
-                </p>
+                <input placeholder='Title' ref='newTitle' />
+                <br />
+                <input placeholder='Body' ref='newBody' />
               </li>
               <li>
                 <button
