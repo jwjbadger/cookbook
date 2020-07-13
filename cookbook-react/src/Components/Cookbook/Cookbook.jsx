@@ -4,6 +4,30 @@ import { connect } from 'react-redux';
 import './Cookbook.css';
 
 class Cookbook extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ingredients: ['test', 'hey'],
+      body: [
+        { title: 'test', body: 'hey hey hey' },
+        { title: 'double test', body: 'hey hey hey' },
+      ],
+    };
+    this.addToIngredients = this.addToIngredients.bind(this);
+  }
+
+  addToIngredients(newValue) {
+    return this.setState({
+      ingredients: [...this.state.ingredients, newValue],
+    });
+  }
+
+  addToBody(newTitle, newBody) {
+    return this.setState({
+      body: [...this.state.body, { title: newTitle, body: newBody }],
+    });
+  }
+
   render() {
     return (
       <div className='Cookbook'>
@@ -15,27 +39,73 @@ class Cookbook extends React.Component {
           <div className='Header'>
             <h3>
               <b>
-                <input placeholder='Recipe Title'></input>
+                <input placeholder='Recipe Title' ref='title' />
               </b>
             </h3>
             <p>
               <i>
-                <input placeholder='Recipe description'></input>
+                <input
+                  placeholder='Recipe description'
+                  ref='description'
+                ></input>
               </i>
               <br />
               <i>
-                By <input placeholder='Author'></input>
+                By <input placeholder='Author' ref='author' />
               </i>
               <br />
               <i>
-                Serves <input placeholder='0'></input>
+                Serves <input placeholder='0' ref='servings' />
               </i>
             </p>
           </div>
           <div className='Ingredients'>
-            <ul>{/* list */}</ul>
+            <ul>
+              {this.state.ingredients.map((value, index) => (
+                <li key={index}>{value}</li>
+              ))}
+              <li>
+                <input placeholder='New Ingredient' ref='newIngredient' />
+              </li>
+              <button
+                onMouseUp={() =>
+                  this.addToIngredients(this.refs.newIngredient?.value)
+                }
+              >
+                Add
+              </button>
+            </ul>
           </div>
-          <div className='body'>{/* list */}</div>
+          <div className='body'>
+            <ul>
+              {this.state.body.map((value, index) => (
+                <li key={index}>
+                  <h3>{value.title}</h3>
+                  <p>{value.body}</p>
+                </li>
+              ))}
+              <li>
+                <h3>
+                  <input placeholder='Title' ref='newTitle' />
+                </h3>
+                <p>
+                  <input placeholder='Body' ref='newBody' />
+                </p>
+              </li>
+              <li>
+                <button
+                  onMouseUp={() =>
+                    this.addToBody(
+                      this.refs.newTitle?.value,
+                      this.refs.newBody?.value,
+                    )
+                  }
+                >
+                  Add
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     );
