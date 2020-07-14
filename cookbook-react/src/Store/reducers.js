@@ -36,6 +36,8 @@ const reducer = (state = intialState, action) => {
         ...state,
         recipes: [...state.recipes, decodeRecipe(action.data)],
       };
+    case '[Recipes] Put Recipe':
+      return { ...state };
     case '[Action] Error':
       return { ...state, error: action.msg };
     default:

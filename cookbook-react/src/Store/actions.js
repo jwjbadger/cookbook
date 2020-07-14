@@ -10,7 +10,7 @@ export const fetchRecipes = () => {
         dispatch({ type: '[Recipes] Fetch Recipes', data: rawData.data }),
       )
       .catch((err) =>
-        dispatch({ type: '[Action] Error', msg: 'Unable to fetch data' }),
+        dispatch({ type: '[Action] Error', msg: 'Unable to GET data' }),
       );
   };
 };
@@ -23,7 +23,19 @@ export const postRecipe = (recipe) => {
         dispatch({ type: '[Recipes] Post Recipe', data: rawData.data }),
       )
       .catch((err) =>
-        dispatch({ type: '[Action] Error', msg: 'Unable to post data' }),
+        dispatch({ type: '[Action] Error', msg: 'Unable to POST data' }),
+      );
+  };
+};
+export const putRecipe = (recipe) => {
+  return (dispatch) => {
+    return axios
+      .put(ROOT_URL + 'cookbook/' + recipe._id, encodeRecipe(recipe))
+      .then((rawData) =>
+        dispatch({ type: '[Recipes] Put Recipe', data: recipe }),
+      )
+      .catch((err) =>
+        dispatch({ type: '[Action] Error', msg: 'Unable to PUT data' }),
       );
   };
 };
