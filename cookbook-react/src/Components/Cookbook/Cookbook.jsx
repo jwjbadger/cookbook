@@ -111,6 +111,7 @@ class Cookbook extends React.Component {
               onClick={() =>
                 this.props.submit(
                   new RecipeSchema({
+                    _id: null,
                     title: this.refs.title?.value,
                     description: this.refs.description?.value,
                     author: this.refs.author?.value,

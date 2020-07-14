@@ -1,10 +1,11 @@
 import React from 'react';
 import './Recipe.css';
+import { connect } from 'react-redux';
 
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { editing: true };
+    this.state = { editing: false };
   }
 
   render() {
@@ -70,10 +71,17 @@ class Recipe extends React.Component {
               <input disabled={!this.state.editing} defaultValue={value.body} />
             </div>
           ))}
+          <button>{this.state.editing ? 'Submit' : 'Edit'}</button>
         </div>
       </div>
     );
   }
 }
 
-export default Recipe;
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     submit: (recipe) => dispatch(putRecipe(recipe)),
+//   };
+// };
+
+export default /* connect(mapDispatchToProps)*/ Recipe;

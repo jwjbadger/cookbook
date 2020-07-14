@@ -1,5 +1,14 @@
 class RecipeSchema {
-  constructor({ title, description, author, ingredients, servings, body }) {
+  constructor({
+    _id,
+    title,
+    description,
+    author,
+    ingredients,
+    servings,
+    body,
+  }) {
+    this._id = _id;
     this.title = title;
     this.description = description;
     this.author = author;
