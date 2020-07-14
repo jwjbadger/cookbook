@@ -38,27 +38,23 @@ class Cookbook extends React.Component {
 
         <div className='Recipe'>
           <div className='Header'>
-            <h3>
-              <b>
-                <input placeholder='Recipe Title' ref='title' />
-              </b>
-            </h3>
-            <p>
-              <i>
-                <input
-                  placeholder='Recipe description'
-                  ref='description'
-                ></input>
-              </i>
-              <br />
-              <i>
-                By <input placeholder='Author' ref='author' />
-              </i>
-              <br />
-              <i>
-                Serves <input placeholder='0' ref='servings' />
-              </i>
-            </p>
+            <input
+              className='slightHeader'
+              placeholder='Recipe Title'
+              ref='title'
+            />
+            <br />
+            <input
+              className='description'
+              placeholder='Recipe description'
+              ref='description'
+            ></input>
+            <br />
+            By{' '}
+            <input className='description' placeholder='Author' ref='author' />
+            <br />
+            Serves{' '}
+            <input className='description' placeholder='0' ref='servings' />
           </div>
           <div className='Ingredients'>
             <ul>
@@ -90,7 +86,11 @@ class Cookbook extends React.Component {
                 </li>
               ))}
               <li>
-                <input placeholder='Title' ref='newTitle' />
+                <input
+                  className='slightHeader'
+                  placeholder='Title'
+                  ref='newTitle'
+                />
                 <br />
                 <input placeholder='Body' ref='newBody' />
               </li>

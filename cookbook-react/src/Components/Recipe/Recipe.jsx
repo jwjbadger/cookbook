@@ -11,36 +11,39 @@ class Recipe extends React.Component {
     return (
       <div className='Recipe'>
         <div className='Header'>
-          <h3>
-            <b>
-              <input
-                defaultValue={this.props.recipe.title}
-                disabled={!this.state.editing}
-              />
-            </b>
-          </h3>
-          <p>
+          <input
+            className='slightHeader'
+            ref='title'
+            defaultValue={this.props.recipe.title}
+            disabled={!this.state.editing}
+          />
+          <br />
+          <input
+            className='description'
+            ref='description'
+            disabled={!this.state.editing}
+            defaultValue={this.props.recipe.description}
+          />
+          <br />
+          <i>
+            By{' '}
             <input
+              className='description'
+              ref='author'
               disabled={!this.state.editing}
-              defaultValue={this.props.recipe.description}
+              defaultValue={this.props.recipe.author}
             />
-            <br />
-            <i>
-              By{' '}
-              <input
-                disabled={!this.state.editing}
-                defaultValue={this.props.recipe.author}
-              />
-            </i>
-            <br />
-            <i>
-              Serves{' '}
-              <input
-                disabled={!this.state.editing}
-                defaultValue={this.props.recipe.servings}
-              />
-            </i>
-          </p>
+          </i>
+          <br />
+          <i>
+            Serves{' '}
+            <input
+              className='description'
+              ref='servings'
+              disabled={!this.state.editing}
+              defaultValue={this.props.recipe.servings}
+            />
+          </i>
         </div>
         <div className='Ingredients'>
           <ul>
@@ -58,12 +61,12 @@ class Recipe extends React.Component {
         <div className='body'>
           {this.props.recipe.body.map((value, index) => (
             <div key={index}>
-              <h3>
-                <input
-                  disabled={!this.state.editing}
-                  defaultValue={value.title}
-                />
-              </h3>
+              <input
+                className='slightHeader bodyHeader'
+                disabled={!this.state.editing}
+                defaultValue={value.title}
+              />
+              <br />
               <input disabled={!this.state.editing} defaultValue={value.body} />
             </div>
           ))}
