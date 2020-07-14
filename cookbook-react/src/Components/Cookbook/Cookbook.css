@@ -2,9 +2,14 @@
   display: flex;
   flex-wrap: wrap;
 }
+.Ingredient {
+  max-width: 98%;
+}
+
 #newIngredient {
   max-width: 98%;
 }
+
 input {
   color: #406d96;
   background-color: #c9e2e8;

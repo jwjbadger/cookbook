@@ -14,6 +14,7 @@ class Cookbook extends React.Component {
       body: [],
     };
     this.addToIngredients = this.addToIngredients.bind(this);
+    this.addToBody = this.addToBody.bind(this);
   }
 
   addToIngredients(newValue) {
