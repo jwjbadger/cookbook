@@ -6,6 +6,15 @@ class Recipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editing: false };
+
+    this.handleEdit = this.handleEdit.bind(this);
+  }
+
+  handleEdit() {
+    if (this.state.editing) {
+      return this.setState({ editing: false });
+    }
+    return this.setState({ editing: true });
   }
 
   render() {
@@ -71,7 +80,9 @@ class Recipe extends React.Component {
               <input disabled={!this.state.editing} defaultValue={value.body} />
             </div>
           ))}
-          <button>{this.state.editing ? 'Submit' : 'Edit'}</button>
+          <button onClick={this.handleEdit}>
+            {this.state.editing ? 'Submit' : 'Edit'}
+          </button>
         </div>
       </div>
     );
