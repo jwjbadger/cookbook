@@ -1,0 +1,11 @@
+.Head {
+  display: block;
+  width: 98vw;
+  height: 4vh;
+  border-radius: 1rem;
+  background-color: #d8e8e8;
+  color: #406d96;
+  box-shadow: 3px 5px 8px #a6a6a6;
+  text-align: center;
+  margin: 0 auto;
+}
