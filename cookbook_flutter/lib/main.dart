@@ -15,9 +15,9 @@ class App extends StatelessWidget {
       title: 'Recipes',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: Color(0xFFC1DFF0),
-        primaryColor: Color(0xFF88CCF1),
-        accentColor: Color(0xFF2D848A),
+        backgroundColor: Color(0xFFEEF3DB),
+        primaryColor: Color(0xFFB7D8D6),
+        accentColor: Color(0xFF4D6466),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: RecipesPage(),
@@ -35,6 +35,7 @@ class _RecipesPageState extends State<RecipesPage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
           title: Text('Recipes',
               style: TextStyle(color: Theme.of(context).accentColor))),
