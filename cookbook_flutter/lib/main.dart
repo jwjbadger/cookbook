@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'BodySegment.dart';
 import 'Recipe.dart';
 import 'RecipeService.dart';
 
@@ -89,7 +90,7 @@ class _RecipesPageState extends State<RecipesPage> {
                                 Padding(
                                   padding: const EdgeInsets.only(right: 5),
                                   child: Text(
-                                    'By ${recipe.author},',
+                                    'By ${recipe.author}',
                                     style: TextStyle(
                                       fontStyle: FontStyle.italic,
                                       fontSize: 10,
@@ -106,6 +107,69 @@ class _RecipesPageState extends State<RecipesPage> {
                                 fontSize: 10,
                                 color: Theme.of(context).primaryColor,
                               ),
+                            ),
+                            Text(
+                              'Ingredients',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              itemCount: recipe.ingredients.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                String ingredient = recipe.ingredients[index];
+
+                                return Text(
+                                  ingredient,
+                                  style: TextStyle(
+                                    fontStyle: FontStyle.italic,
+                                    fontSize: 10,
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                );
+                              },
+                            ),
+                            Text(
+                              'Recipe',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              itemCount: recipe.body.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                BodySegment bodySegment = recipe.body[index];
+
+                                return Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      bodySegment.title,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                    Text(
+                                      bodySegment.body,
+                                      style: TextStyle(
+                                        fontStyle: FontStyle.italic,
+                                        fontSize: 10,
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
                             ),
                           ],
                         ),
