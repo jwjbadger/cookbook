@@ -1,0 +1,65 @@
+.Cookbook {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Ingredient {
+  max-width: 98%;
+}
+
+.slightHeader {
+  font-size: 1.17em;
+  font-weight: bold;
+  padding-left: 6px;
+}
+.bodyHeader {
+  margin-bottom: 2px;
+  margin-top: 8px;
+}
+
+.description {
+  font-style: italic;
+}
+
+#newIngredient {
+  max-width: 98%;
+}
+
+input {
+  color: #406d96;
+  background-color: #c9e2e8;
+
+  border-width: 0px;
+  border-radius: 1rem;
+  padding-left: 4px;
+}
+input:disabled {
+  background-color: #a8d0da;
+}
+
+button {
+  background-color: #406d96;
+  color: #c9e2e8;
+
+  border-width: 0px;
+  border-radius: 1rem;
+
+  margin: 2px;
+
+  float: right;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #406d96;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #406d96;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #406d96;
+}

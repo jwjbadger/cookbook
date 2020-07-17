@@ -8,15 +8,14 @@
 */npm-debug.log*
 */yarn-debug.log*
 */yarn-error.log*
-
+*/build
 
 # React
 # dependencies
 cookbook-react/.pnp
 cookbook-react/.pnp.js
+cookbook-desktop/.pnp
+cookbook-desktop/.pnp.js
 
 # testing
 cookbook-react/coverage
-
-# production
-cookbook-react/build
