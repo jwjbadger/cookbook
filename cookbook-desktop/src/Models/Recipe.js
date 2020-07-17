@@ -18,4 +18,4 @@ class RecipeSchema {
   }
 }
 
-module.exports = RecipeSchema;
+export default RecipeSchema;

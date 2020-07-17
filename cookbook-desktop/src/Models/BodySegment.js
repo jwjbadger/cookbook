@@ -5,4 +5,4 @@ class BodySegmentSchema {
   }
 }
 
-module.exports = BodySegmentSchema;
+export default BodySegmentSchema;
