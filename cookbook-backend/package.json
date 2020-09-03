@@ -9,6 +9,7 @@
   "author": "Joseph Johnson",
   "license": "MIT",
   "dependencies": {
+    "bl": "^2.2.1",
     "express": "^4.17.1",
     "mongo-sanitize": "^1.1.0",
     "mongoose": "^5.9.22",
